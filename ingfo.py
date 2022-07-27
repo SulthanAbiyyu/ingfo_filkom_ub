@@ -7,7 +7,6 @@ from pengumuman.telegram_bot import send_message
 
 def ingfo():
     status = get_pengumuman()
-    print(os.environ.get('CHANNEL'))
     if status:
         data = json.loads(open('pengumuman_update.json', 'r').read())
         judul = data['judul']
