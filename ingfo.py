@@ -14,6 +14,10 @@ def ingfo():
         content = data['text'].strip()
         tanggal = data['tanggal']
         print(judul)
+
+        if len(content) > 3000:
+            content = content[:3000] + '... [selengkapnya cek sumber]'
+
         TEXT = f" {judul} \nTanggal: {tanggal} \n\n{content} \n\n\nSumber: {link}"
         API_KEY = os.environ['API_KEY']
         CHANNEL = os.environ['CHANNEL']
