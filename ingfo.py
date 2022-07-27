@@ -15,8 +15,8 @@ def ingfo():
         tanggal = data['tanggal']
         print(judul)
         TEXT = f" {judul} \nTanggal: {tanggal} \n\n{content} \n\n\nSumber: {link}"
-        API_KEY = os.environ.get('API_KEY')
-        CHANNEL = os.environ.get('CHANNEL')
+        API_KEY = os.environ['API_KEY']
+        CHANNEL = os.environ['CHANNEL']
         send_message(TEXT, API_KEY, CHANNEL)
     else:
         pass
