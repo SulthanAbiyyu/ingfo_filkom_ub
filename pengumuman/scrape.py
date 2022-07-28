@@ -14,6 +14,7 @@ def get_pengumuman():
         'http': '122.102.118.82:8080',
         'http': '43.255.113.232:8083',
     }
+    print("[GET] pengumuman..")
     try:
         response = requests.get(url, proxies=proxies).text
     except:
@@ -25,6 +26,7 @@ def get_pengumuman():
 
     if not os.path.exists('pengumuman_update.json'):
         link = semua_pengumuman[0].find('a')['href']
+        print("[GET] latest pengumuman..")
         link_content = BeautifulSoup(
             requests.get(link).text, 'html.parser')
         tanggal = link_content.find('time')['datetime']
@@ -54,6 +56,9 @@ def get_pengumuman():
 
         if judul_baru != judul_lama:
             link = semua_pengumuman[0].find('a')['href']
+
+            print("[GET] latest pengumuman..")
+
             link_content = BeautifulSoup(
                 requests.get(link).text, 'html.parser')
             tanggal = link_content.find('time')['datetime']
@@ -63,7 +68,7 @@ def get_pengumuman():
                     'div', class_='entry-content')[0].text.strip()
             except:
                 link_text = ""
-                
+
             data_pengumuman = {
                 "judul": judul_baru,
                 "link": link,
@@ -72,10 +77,8 @@ def get_pengumuman():
             }
             with open('pengumuman_update.json', 'w') as f:
                 json.dump(data_pengumuman, f)
-            print("ada ingfo")
             return True
 
-        print("no ingfo")
         return False
 
 
