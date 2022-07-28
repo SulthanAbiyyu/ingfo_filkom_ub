@@ -28,8 +28,13 @@ def get_pengumuman():
         link_content = BeautifulSoup(
             requests.get(link).text, 'html.parser')
         tanggal = link_content.find('time')['datetime']
-        link_text = link_content.find_all(
-            'div', class_='entry-content')[0].text.strip()
+
+        try:
+            link_text = link_content.find_all(
+                'div', class_='entry-content')[0].text.strip()
+        except:
+            link_text = ""
+
         data_pengumuman = {
             "judul": judul_baru,
             "link": link,
@@ -52,8 +57,13 @@ def get_pengumuman():
             link_content = BeautifulSoup(
                 requests.get(link).text, 'html.parser')
             tanggal = link_content.find('time')['datetime']
-            link_text = link_content.find_all(
-                'div', class_='entry-content')[0].text.strip()
+
+            try:
+                link_text = link_content.find_all(
+                    'div', class_='entry-content')[0].text.strip()
+            except:
+                link_text = ""
+                
             data_pengumuman = {
                 "judul": judul_baru,
                 "link": link,
