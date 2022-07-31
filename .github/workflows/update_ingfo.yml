@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "0 */4 * * *" # At minute 0 past every 4th hour.
+    - cron: "*/30 * * * *" # At minute 0 past every 4th hour.
 
 jobs:
   build:
@@ -34,8 +34,8 @@ jobs:
 
       - name: Add File
         run: |
-          git config --local user.email "zblackjack980@gmail.com"
-          git config --local user.name "SulthanAbiyyu"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add .
 
       - name: Check is need to push
