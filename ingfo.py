@@ -21,7 +21,7 @@ def ingfo():
             print("[DEBUG] content is too long, cutting it..")
             content = content[:3000] + '... [selengkapnya cek sumber]'
 
-        TEXT = f" {judul} \nTanggal: {tanggal} \n\n{content} \n\n\nSumber: {link}"
+        TEXT = f" {judul} \nTanggal: {tanggal} \n\n{content} \n\n\nSumber: {link} \n\nhttps://t.me/ingfofilkomub"
         API_KEY = os.environ['API_KEY']
         CHANNEL = os.environ['CHANNEL']
 
