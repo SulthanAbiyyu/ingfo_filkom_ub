@@ -17,9 +17,9 @@ def ingfo():
         tanggal = data['tanggal']
         print("[DEBUG] new pengumuman title: ", judul[:20])
 
-        if len(content) > 3000:
+        if len(content) > 2500:
             print("[DEBUG] content is too long, cutting it..")
-            content = content[:3000] + '... [selengkapnya cek sumber]'
+            content = content[:2500] + '... [selengkapnya cek sumber]'
 
         TEXT = f" {judul} \nTanggal: {tanggal} \n\n{content} \n\n\nSumber: {link} \n\nhttps://t.me/ingfofilkomub"
         API_KEY = os.environ['API_KEY']
