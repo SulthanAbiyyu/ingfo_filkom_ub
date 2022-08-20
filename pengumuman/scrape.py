@@ -38,9 +38,9 @@ def get_pengumuman():
             link_text = ""
 
         data_pengumuman = {
-            "judul": judul_baru,
+            "judul": judul_baru.replace("&", "dan"),
             "link": link,
-            "text": link_text,
+            "text": link_text.replace("&", "dan"),
             "tanggal": tanggal
         }
         with open('pengumuman_update.json', 'w') as f:
@@ -70,9 +70,9 @@ def get_pengumuman():
                 link_text = ""
 
             data_pengumuman = {
-                "judul": judul_baru,
+                "judul": judul_baru.replace("&", "dan"),
                 "link": link,
-                "text": link_text,
+                "text": link_text.replace("&", "dan"),
                 "tanggal": tanggal
             }
             with open('pengumuman_update.json', 'w') as f:
